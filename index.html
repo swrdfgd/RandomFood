@@ -2,55 +2,115 @@
 <html>
 <head>
     <title>Random Food Generator</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-		
-		 #foodName {
-		  font-size: 24px;
-		  font-weight: bold;
-		  color: #007bff;
-		  margin-bottom: 20px;
-		  display: flex;
-		  flex-direction: column;
-		  align-items: center;
-        }
-        
-        .image-container {
-            max-width: 300px;
-            max-height: 300px;
-            
-        }
+	<style>
+	  body {
+		font-family: 'Arial', sans-serif;
+		background-color: #f4efe8;
+		color: #3b302f;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 100vh;
+		position: relative;
+	  }
 
-        .image-container img {
-            width: 100%;
-            height: auto;
-        }
+	  main {
+		padding-top: 50px; /* Add padding to prevent overlap */
+		text-align: center;
+	  }
 
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #3498db;
-            color: white;
-            border: none;
-            cursor: pointer;
-			margin-bottom: 20px;
-        }
-    </style>
+	  h1 {
+		font-size: 2.5em;
+		margin-bottom: 20px;
+	  }
+
+	  button {
+		background-color: #6d5c59;
+		color: #fff;
+		border: none;
+		padding: 10px 20px;
+		font-size: 1.2em;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+	  }
+
+	  button:hover {
+		background-color: #8c7a75;
+	  }
+
+	  #foodName {
+		margin-top: 20px;
+		font-size: 1.5em;
+	  }
+
+	  .image-container {
+		margin-top: 20px;
+		max-width: 90%;
+		display: flex;
+		justify-content: center;
+	  }
+
+	  .image-container img {
+		width: 100%;
+		height: auto;
+		border-radius: 15px;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	  }
+
+	  .link-container {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+	  }
+
+	  .link-container a {
+		text-decoration: none;
+		color: #3b302f;
+		font-size: 1.2em;
+		border-bottom: 2px solid #3b302f;
+		padding-bottom: 2px;
+		transition: color 0.3s ease, border-bottom-color 0.3s ease;
+	  }
+
+	  .link-container a:hover {
+		color: #6d5c59;
+		border-bottom-color: #6d5c59;
+	  }
+
+	  @media (max-width: 768px) {
+		h1 {
+		  font-size: 2em;
+		}
+
+		button {
+		  font-size: 1em;
+		  padding: 8px 16px;
+		}
+
+		#foodName {
+		  font-size: 1.2em;
+		}
+
+		.link-container a {
+		  font-size: 1em;
+		}
+	  }
+	</style>
 </head>
 <body>
-    <h1>Random Food Generator</h1>
-    <button onclick="getRandomImage()">Generate Random Food</button>
-	<div id="foodName"></div>
-	<div>(the image is not necessarily accurate)</div>
-    <div id="imageContainer" class="image-container"></div>
+	<div class="link-container">
+	  <a href="https://swrdfgd.github.io/KiankoLand/">Kianko Land</a>
+	</div>
+
+	<main>
+	  <h1>Random Food Generator</h1>
+	  <button onclick="getRandomImage()">Generate Random Food</button>
+	  <div id="foodName"></div>
+	  <div>(the image is not necessarily accurate)</div>
+	  <div id="imageContainer" class="image-container"></div>
+	</main>
 
     <script>
 	
